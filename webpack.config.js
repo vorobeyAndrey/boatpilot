@@ -17,7 +17,7 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js', '.json']
     },
     plugins: [
-        new HtmlWebpackPlugin({template: 'index.html'}),
+        new HtmlWebpackPlugin({ template: 'index.html' }),
         new webpack.HotModuleReplacementPlugin()
     ],
     module: {
@@ -46,20 +46,22 @@ module.exports = {
                 use: [
                     {
                         loader: 'file-loader',
-                        options: { query: { hash: 'sha512', digest: 'hex', name: '[hash].[ext]'} }
+                        options: { query: { hash: 'sha512', digest: 'hex', name: '[hash].[ext]' } }
                     },
                     {
                         loader: 'image-webpack-loader',
-                        options: { query: {
-                            mozjpeg: {
-                                progressive: true
-                            },
-                            gifsicle: {
-                                interlaced: true
-                            },
-                            optipng: {
-                                optimizationLevel: 7
-                            } }
+                        options: {
+                            query: {
+                                mozjpeg: {
+                                    progressive: true
+                                },
+                                gifsicle: {
+                                    interlaced: true
+                                },
+                                optipng: {
+                                    optimizationLevel: 7
+                                }
+                            }
                         }
                     }
 
