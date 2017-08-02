@@ -1,0 +1,453 @@
+/* ==========================================================================
+   PAGE-BOAT
+   ========================================================================== */
+.page-boat {
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 0 !important;
+  position: relative;
+  background: none;
+
+  @media @mobile-md {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  @media @tablet-sm {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 100%;
+    flex-basis: 100%;
+    &.left { margin-right: 0;}
+    ~ .fb-widget { padding-top: 0; }
+  }
+  @media @desktop {
+    flex-basis: 60%;
+    ~ .highlights {
+      margin-top: 380px;
+      padding-top: 30px;
+    }
+  }
+
+  .inform {
+    margin-bottom: 20px;
+    padding: 25px 15px;
+    border: 1px solid @color-gray-lighter;
+    background: @color-white;
+    @media @tablet-sm {
+      padding: 20px 30px;
+    }
+  }
+
+  .space {
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    position: relative;
+    border-bottom: 1px solid @color-platinum;
+    &:after { .clearfix; }
+  }
+
+  .picture {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid @color-platinum;
+    @media @mobile-md {
+      width: 50%;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      float: left;
+      border: none;
+    }
+    @media @tablet-md {
+      width: 69%;
+    }
+    @media @desktop {
+      max-width: 600px;
+    }
+    .for {
+      height: 217px;
+      margin: 0 0 20px 0;
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+      &.slick-initialized {
+        height: auto;
+        overflow: visible;
+      }
+      &:after { .clearfix; }
+      li {
+        float: left;
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+      @media @tablet-md {
+        margin: 0;
+        height: 394px;
+        margin-left: 78px;
+      }
+    }
+    .nav {
+      height: 48px;
+      margin: 0 -5px;
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+      &:after { .clearfix; }
+      &.slick-initialized {
+        height: auto;
+        overflow: visible;
+        .slick-slide {
+          position: relative;
+          &:before {
+            .pseudo;
+            position: absolute;
+            border: 2px solid transparent;
+            top: 0;
+            bottom: 0;
+            left: 5px;
+            right: 5px;
+            z-index: 10;
+          }
+          &.slick-current {
+            &:before { border-color: @color-orange; }
+          }
+        }
+      }
+      li {
+        width: 25%;
+        padding: 0 5px;
+        float: left;
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+      @media @tablet-md {
+        width: 68px;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        &.slick-initialized {
+          .slick-slide {
+            &:before { left: 0; right: 0; }
+          }
+        }
+        li {
+          width: 100%;
+          margin-bottom: 10px;
+          padding: 0;
+          float: none;
+        }
+      }
+    }
+  }
+
+  .boat-card {
+    @media @mobile-md {
+      width: 45%;
+      float: right;
+    }
+    @media @tablet-md {
+      width: 27.6%;
+    }
+    .actions {
+      padding-bottom: 23px;
+      border-bottom: 1px solid @color-platinum;
+      &:after { .clearfix; }
+    }
+    .rate {
+      padding: 5px 14px;
+      float: left;
+      color: @color-black;
+      .color-black(.24);
+      border: 1px solid @color-platinum;
+      border-radius: 22px;
+      box-shadow: 0 1px 2px 0 @color;
+      cursor: default;
+      .stars {
+        width: 100px;
+        height: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        margin-top: -4px;
+        margin-left: 2px;
+        &:before {
+          .pseudo;
+          background: url("@{images}/icons/rate.png") center center no-repeat;
+          background-size: auto 100%;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+        > span {
+          width: 0;
+          height: 100%;
+          display: block;
+          background-color: #f7c90f;
+        }
+      }
+    }
+    .like {
+      width: 52px;
+      height: 52px;
+      float: right;
+      position: relative;
+      margin-top: -8px;
+      margin-right: -5px;
+      border-radius: 50%;
+      background: @color-white;
+      .color-black(.3);
+      box-shadow: 0 1px 2px 0 @color;
+      border: 1px solid @color-platinum;
+
+      @media @desktop {
+        width: 46px;
+        height: 46px;
+      }
+
+      &:before, &:after {
+        .pseudo;
+        width: 25px;
+        height: 20px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url('@{images}/like.png') no-repeat 0 0;
+        background-size: 25px auto;
+        transition: opacity @duration;
+        transform: scale(1.15);
+      }
+      &:before { z-index: 1; }
+      &:after { z-index: 2; background-position: 0 -20px; opacity: 0; }
+      &:hover {
+        &:before { opacity: 0; }
+        &:after { opacity: 1; }
+      }
+    }
+    .crumbs {
+      margin: 20px 0 12px 0;
+      &, > a {
+        color: @color-orange;
+      }
+      a {
+        &:after {
+          margin-left: 6px;
+          content: '\0203A';
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+    .info {
+      margin-top: 0;
+      margin-bottom: 16px;
+      padding: 0;
+      list-style: none;
+    }
+    .check-list {
+      margin-top: 16px;
+      margin-bottom: 0;
+      padding: 25px 0 0 0;
+      list-style: none;
+      color: @color-black;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      border-top: 1px solid @color-platinum;
+      li {
+        margin-bottom: 10px;
+        padding-left: 34px;
+        position: relative;
+        &:last-child { margin-bottom: 0; }
+        &:before {
+          .pseudo;
+          width: 22px;
+          height: 22px;
+          background: url("@{images}/icons/check-green.png") 0 0 no-repeat;
+          background-size: 100% 100%;
+          position: absolute;
+          left: -2px;
+          top: -2px;
+        }
+      }
+    }
+  }
+
+  .carousel {
+    margin: 0 -15px;
+    padding-top: 46px;
+    position: relative;
+    overflow: hidden;
+    @media @desktop {
+      max-width: 810px;
+    }
+
+    .entry {
+      width: 100%;
+      padding: 0 15px;
+      position: relative;
+      overflow: hidden;
+      float: left;
+      z-index: 2;
+      &:after { .clearfix; }
+      .heading { display: none; }
+      .item {
+        margin-bottom: 30px;
+        &:last-of-type { margin-bottom: 0; }
+      }
+      @media @mobile-lg {
+        display: flex;
+        flex-wrap: wrap;
+        .item {
+          &:nth-of-type(1), &:nth-of-type(2) {
+            width: 50%;
+            flex-basis: 50%;
+          }
+          &:nth-of-type(1) { padding-right: 5px; }
+          &:nth-of-type(2) { padding-left: 5px; }
+        }
+      }
+      @media @tablet-md {
+        padding-top: 50px;
+        .item {
+          &, &:nth-of-type(2) {
+            margin-bottom: 64px;
+            padding-left: 105px;
+            position: relative;
+          }
+          &:nth-of-type(1), &:nth-of-type(2) {
+            width: 50%;
+            flex-basis: 50%;
+          }
+          &:nth-of-type(3) {
+            width: 86%;
+            flex-basis: 86%;
+          }
+        }
+      }
+      .title {
+        margin-bottom: 10px;
+        @media @tablet-md {
+          margin: 0;
+          width: 104px;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+      .list {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        dt {
+          margin-bottom: 10px;
+          width: 50%;
+          font-weight: 500;
+          letter-spacing: .06em;
+          float: left;
+          clear: left;
+        }
+        dd {
+          margin-left: 0;
+          margin-bottom: 10px;
+        }
+      }
+      .more {
+        padding-left: 18px;
+        color: @color-orange;
+        font-weight: 500;
+        letter-spacing: .06em;
+        position: relative;
+        &:before, &:after {
+          .pseudo;
+          margin: auto 0;
+          background: @color-orange;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+        }
+        &:before {
+          width: 2px;
+          height: 8px;
+          margin-left: 3px;
+        }
+        &:after {
+          width: 8px;
+          height: 2px;
+        }
+        @media @tablet-md {
+          padding-left: 0;
+          &:before, &:after { left: -18px; }
+        }
+      }
+      p:last-of-type { margin-bottom: 10px; }
+    }
+
+    .nav {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: @color-black;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      cursor: default;
+
+      @media @tablet-md {
+        left: 14px;
+      }
+
+      &:before, &:after {
+        .pseudo;
+        width: 15px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 15;
+        @media @tablet-sm {
+          display: none;
+        }
+      }
+      &:before { left: 0; .color-white(0); background: linear-gradient(to right, @color-white, @color); }
+      &:after { right: 0; .color-white(0); background: linear-gradient(to left, @color-white, @color); }
+
+      .slick-track {
+        left: 15px;
+        @media @tablet-sm {
+          left: 0;
+        }
+      }
+
+      li {
+        height: 45px;
+        padding: 12px 13px;
+        border-top: 1px solid @color-silver;
+        border-bottom: 1px solid @color-silver;
+        overflow: hidden;
+        display: block;
+        float: left;
+        cursor: pointer;
+        background: @color-white;
+        &:first-child { border-left: 1px solid @color-silver; border-radius: 3px 0 0 3px; }
+        &:last-child { border-right: 1px solid @color-silver; border-radius: 0 3px 3px 0; }
+        &.slick-current { color: @color-black; background: @color-orange; }
+      }
+    }
+  }
+}

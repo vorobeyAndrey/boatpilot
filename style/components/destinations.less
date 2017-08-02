@@ -1,0 +1,244 @@
+/* ==========================================================================
+   DESTINATIONS
+   ========================================================================== */
+.destinations {
+  margin-left: -15px;
+  margin-right: -15px;
+  position: relative;
+  @media @mobile-md {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  @media @tablet-sm {
+    &.left { margin-right: 0; }
+    flex-grow: 1;
+    width: 100%;
+    max-width: 100%;
+    flex-basis: 100%;
+    order: 40;
+  }
+  @media @desktop {
+    width: 930px;
+    max-width: 930px;
+    flex-basis: 60%;
+  }
+
+  .heading {
+    @media @tablet-sm {
+      font-size: 22px;
+      line-height: 45px;
+      position: absolute;
+      top: 40px;
+      left: 30px;
+      z-index: 10;
+    }
+    @media @desktop {
+      font-size: 25px;
+    }
+  }
+
+  .carousel {
+    padding: 80px 0 5px;
+    margin: 0 -15px;
+    position: relative;
+    overflow: hidden;
+    @media @mobile-md {
+      padding-bottom: 0;
+    }
+    @media @tablet-sm {
+      padding: 0;
+      margin: -45px -30px;
+    }
+
+    .item {
+      width: 100%;
+      padding: 0 15px;
+      position: relative;
+      overflow: hidden;
+      float: left;
+      z-index: 2;
+      &:after { .clearfix; }
+      @media @mobile-md {
+        display: flex;
+      }
+      @media @tablet-sm {
+        padding: 140px 30px 0;
+      }
+      @media @desktop {
+        padding-top: 200px;
+      }
+    }
+
+    .picture {
+      padding: 0;
+      margin: 0 0 25px;
+      @media @mobile-md {
+        width: 50%;
+        height: 260px;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+        flex-grow: 0;
+        flex-shrink: 0;
+        order: 2;
+      }
+      @media @tablet-sm {
+        width: 340px;
+        height: 460px;
+        margin: -140px -30px -30px 0;
+      }
+      @media @desktop {
+        width: 53.4%;
+        height: 495px;
+        margin-top: -200px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        @media @mobile-md {
+          width: auto;
+          max-width: none;
+          height: 100%;
+        }
+        @media @tablet-sm {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate3d(-50%, -50%, 0);
+        }
+      }
+    }
+
+    .description {
+      padding: 0;
+      @media @mobile-md {
+        padding-right: 15px;
+        flex-grow: 1;
+        order: 1;
+      }
+      @media @tablet-sm {
+        padding-bottom: 30px;
+      }
+
+      p { margin: 0; }
+
+      .title {
+        padding-left: 38px;
+        margin: 0 0 10px;
+        position: relative;
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: bold;
+        letter-spacing: .01em;
+        text-transform: none;
+
+        &:before {
+          .pseudo;
+          width: 30px;
+          height: 20px;
+          margin: auto;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          background: no-repeat 0 0;
+          background-size: contain;
+          .color-black(.3);
+          box-shadow: 1px 1px 5px @color;
+        }
+        // Make sure that country flag image exists in 'img/flags/'
+        @countries: 'cr', 'es', 'gr', 'it', 'fr', 'tr';
+        .for(@countries, { &[data-flag="@{value}"]:before { background-image: url('@{images}/flags/@{value}.png'); } });
+      }
+
+      .rentals {
+        margin-top: 22px;
+        cursor: default;
+
+        @media @desktop {
+          margin-top: 30px;
+        }
+
+        .h {
+          margin-top: 0;
+          margin-bottom: 10px;
+          font-weight: 500;
+          text-transform: uppercase;
+          color: @color-black;
+          display: block;
+        }
+
+        a {
+          margin-right: 8px;
+          letter-spacing: .04em;
+          white-space: nowrap;
+          &:last-child { margin-right: 0; }
+        }
+      }
+    }
+
+    .nav {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: @color-black;
+      overflow: hidden;
+      position: absolute;
+      top: 15px;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      cursor: default;
+      @media @tablet-sm {
+        left: 255px;
+        right: auto;
+        top: 40px;
+      }
+      @media @desktop {
+        left: 316px;
+      }
+
+      &:before, &:after {
+        .pseudo;
+        width: 15px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 15;
+        @media @tablet-sm {
+          display: none;
+        }
+      }
+      &:before { left: 0; .color-white(0); background: linear-gradient(to right, @color-white, @color); }
+      &:after { right: 0; .color-white(0); background: linear-gradient(to left, @color-white, @color); }
+
+      .slick-track {
+        left: 15px;
+        @media @tablet-sm {
+          left: 0;
+        }
+      }
+
+      li {
+        height: 45px;
+        padding: 12px 13px;
+        border-top: 1px solid @color-silver;
+        border-bottom: 1px solid @color-silver;
+        overflow: hidden;
+        display: block;
+        float: left;
+        cursor: pointer;
+        background: @color-white;
+        &:first-child { border-left: 1px solid @color-silver; border-radius: 3px 0 0 3px; }
+        &:last-child { border-right: 1px solid @color-silver; border-radius: 0 3px 3px 0; }
+        &.slick-current { color: @color-black; background: @color-orange; }
+      }
+    }
+  }
+}

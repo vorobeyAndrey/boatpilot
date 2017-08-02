@@ -1,0 +1,112 @@
+/* ==========================================================================
+   SEARCH
+   ========================================================================== */
+.search {
+  height: 35px;
+  max-width: 680px;
+  margin: 20px auto 25px;
+  user-select: none;
+
+  @media @mobile-xs {
+    height: 45px;
+    margin-bottom: 55px;
+  }
+  @media @mobile-md {
+    margin-bottom: 40px;
+  }
+  @media @tablet-sm {
+    max-width: none;
+    position: absolute;
+    top: -81px;
+    left: 272px;
+    right: 126px;
+  }
+
+  .space {
+    width: 100%;
+    padding-right: 82px;
+    position: relative;
+    &:after { .clearfix; }
+
+    @media @mobile-xs {
+      padding-right: 112px;
+    }
+    @media @desktop {
+      padding-right: 133px;
+    }
+  }
+
+  legend {
+    display: none;
+    & ~ .form-group {
+    }
+  }
+
+  .form-group {
+    width: 50%;
+    padding: 0 2px;
+    margin: 0;
+    float: left;
+    display: block;
+    &:nth-child(2) {
+      width: 48%; padding-left: 0;
+      .selectric {
+        border-top-left-radius: 17px;
+        border-bottom-left-radius: 17px;
+        @media @mobile-xs {
+          border-top-left-radius: 22px;
+          border-bottom-left-radius: 22px;
+        }
+      }
+    }
+    &:nth-child(3) { width: 52%; }
+    @media @desktop {
+      &:nth-child(2), &:nth-child(3) { width: 50%; }
+    }
+  }
+
+  .selectric {
+    min-width: 50px;
+    max-width: none;
+    &-wrapper { display: block; }
+    @media @desktop {
+      min-width: 185px;
+    }
+  }
+  
+  .selectric-items {
+  }
+
+  .submit {
+    width: 80px;
+    height: 35px;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    span { display: none; }
+
+    @media @mobile-xs {
+      width: 110px;
+      height: 45px;
+      padding-top: 10px;
+      padding-right: 35px;
+      padding-bottom: 10px;
+    }
+  }
+
+  @media @desktop {
+    margin-left: 250px;
+    left: 50vw;
+    right: auto;
+    .submit {
+      width: 130px; height: 45px; padding-right: 14px; border-radius: 2px 22px 22px 2px;
+    }
+  }
+  @media (min-width: 1340px) {
+    margin-left: 286px;
+  }
+}

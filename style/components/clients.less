@@ -1,0 +1,98 @@
+/* ==========================================================================
+   CLIENTS
+   ========================================================================== */
+.clients {
+  width: 100%;
+  max-width: 100%;
+  padding: 5px 0;
+  background: none;
+  user-select: none;
+  @media @tablet-sm {
+    padding: 5px 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+    flex-grow: 1;
+    flex-basis: 100%;
+    order: 90;
+  }
+
+  .carousel {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    &:after { .clearfix; }
+    @media @tablet-sm {
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
+    li {
+      width: 33.3%;
+      padding: 12px 0;
+      float: left;
+      &:nth-child(n+7) { display: none; }
+
+      @media @mobile-xs {
+        padding: 15px 0;
+      }
+      @media @tablet-sm {
+        width: 25%;
+        &:nth-child(n+7) { display: block; }
+      }
+      @media @desktop {
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+
+      img {
+        width: 90px;
+        height: 32px;
+        margin: 0 auto;
+        display: block;
+        @media @mobile-xs {
+          width: 100px;
+          height: 36px;
+        }
+        @media @desktop {
+          width: 140px;
+          height: 50px;
+        }
+      }
+    }
+  }
+
+  .slick-arrow {
+    width: 50px;
+    margin: auto 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    cursor: pointer;
+    &:before {
+      .pseudo;
+      width: 15px;
+      height: 15px;
+      border-top: 2px solid @color-blue;
+      border-left: 2px solid @color-blue;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: border-color @duration;
+    }
+    &.prev {
+      left: 0; background: linear-gradient(to right, @color-white-smoke-light, @color-white-smoke-light-transparent);
+      &:before { left: 5px; transform: rotate(-45deg); }
+    }
+    &.next {
+      right: 0; background: linear-gradient(to left, @color-white-smoke-light, @color-white-smoke-light-transparent);
+      &:before { right: 5px; transform: rotate(135deg); }
+    }
+    &:hover:before { border-color: @color-black; }
+  }
+}

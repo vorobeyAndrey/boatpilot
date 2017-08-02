@@ -1,0 +1,55 @@
+/* ==========================================================================
+   MAP
+   ========================================================================== */
+.map {
+  padding: 35px 15px 0;
+  margin-right: -15px;
+  margin-left: -15px;
+  position: relative;
+  &:after { .clearfix; }
+
+  @media @tablet-sm {
+    padding: 35px 15px 0;
+    flex-grow: 1;
+    flex-basis: 100%;
+    order: 100;
+  }
+
+  @media @desktop {
+    margin-top: 6px;
+    padding-top: 32px;
+  }
+
+  .heading {
+    margin: 0 0 25px;
+    text-align: center;
+  }
+
+  .gmap {
+    height: 350px;
+    padding: 0;
+    margin: 0 -15px;
+    position: relative;
+    background: @color-silver;
+    user-select: none;
+    * { user-select: none; }
+    @media @mobile-xs and @portrait {
+      height: 400px;
+    }
+    @media @mobile-md and @landscape {
+      height: 220px;
+    }
+    @media @mobile-lg and @landscape {
+      height: 260px;
+    }
+    @media (min-width: 730px) and @landscape {
+      height: 300px;
+    }
+    @media @desktop {
+      height: 478px;
+    }
+  }
+
+  a[href^="https://maps.google.com/maps"] { display: none !important; }
+  .gm-style-cc { display: none !important; }
+}

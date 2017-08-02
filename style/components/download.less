@@ -1,0 +1,131 @@
+/* ==========================================================================
+   DOWNLOAD
+   ========================================================================== */
+.download {
+  min-height: 230px;
+  padding: 30px;
+  position: relative;
+  color: @color-white;
+  background: @color-turquoise;
+  cursor: default;
+
+  @media @tablet-sm {
+    min-height: 200px;
+    padding: 25px 30px;
+  }
+
+  .space {
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    @media @mobile-xs {
+      height: 185px;
+    }
+    @media @tablet-sm {
+      height: 168px;
+    }
+
+    &:before {
+      .pseudo;
+      width: 125px;
+      height: 230px;
+      display: block;
+      position: absolute;
+      right: -10px;
+      bottom: -30px;
+      z-index: -1;
+      background: url('@{images}/iphone.jpg') no-repeat 100% 100%;
+      background-size: contain;
+      @media @tablet-sm {
+        width: 115px;
+        height: 210px;
+        right: -15px;
+        bottom: -25px;
+      }
+    }
+  }
+
+  .head {
+    margin: -3px 0 10px;
+    font-size: 20px;
+    line-height: 32px;
+    @media @tablet-sm {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    strong {
+      display: block;
+      font-size: 23px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      @media @tablet-sm {
+        font-size: 21px;
+      }
+    }
+  }
+
+  .appstore {
+    margin: 0 0 12px;
+    display: block;
+    user-select: none;
+    @media @tablet-sm {
+      margin-bottom: 10px;
+    }
+    img {
+      height: 50px;
+      @media @tablet-sm {
+        height: 45px;
+      }
+    }
+  }
+
+  .form-group {
+    padding-right: 132px;
+    margin-right: -10px;
+    position: relative;
+    @media @tablet-sm {
+      padding-right: 120px;
+      margin-right: -15px;
+    }
+  }
+
+  .email {
+    width: 100%;
+    max-width: none;
+    height: 50px;
+    padding: 15px 17px;
+    font-size: 18px;
+    line-height: 18px;
+    @media @tablet-sm {
+      height: 45px;
+      padding: 12px 15px;
+    }
+  }
+
+  .submit {
+    width: 128px;
+    height: 50px;
+    padding: 17px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    font-size: 18px;
+    line-height: 16px;
+    letter-spacing: .02em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    @media @tablet-sm {
+      width: 116px;
+      height: 45px;
+      padding: 14px;
+      font-size: 16px;
+      color: @color-white;
+      background: @color-blue;
+      box-shadow: none;
+    }
+  }
+}

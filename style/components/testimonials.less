@@ -1,0 +1,161 @@
+/* ==========================================================================
+   TESTIMONIALS
+   ========================================================================== */
+.testimonials {
+  margin-right: -15px;
+  margin-left: -15px;
+  overflow: hidden;
+
+  @media @mobile-md {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  @media @tablet-sm {
+    order: 70;
+  }
+  @media @desktop {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .heading {
+    margin: 0 0 27px;
+  }
+
+  .carousel {
+    padding-bottom: 40px;
+    margin: 0 -15px;
+    position: relative;
+    @media @tablet-sm {
+      padding-bottom: 50px;
+    }
+    @media @desktop {
+      padding-bottom: 34px;
+    }
+
+    &:after { .clearfix; }
+
+    .slide {
+      padding-right: 15px;
+      padding-left: 15px;
+      float: left;
+      .quote:last-child { margin-bottom: 0; }
+    }
+
+    .quote {
+      width: 100%;
+      min-height: 84px;
+      padding: 0 0 0 90px;
+      margin: 0 0 30px;
+      position: relative;
+      @media @mobile-xs {
+        padding-left: 100px;
+      }
+      @media @desktop {
+        width: 50%;
+        margin-bottom: 0;
+        float: left;
+      }
+
+      .author {
+        margin-bottom: 5px;
+        display: block;
+        @media @mobile-xs {
+          margin-bottom: 10px;
+        }
+      }
+
+      .photo {
+        width: 74px;
+        height: 74px;
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 0;
+      }
+
+      .name {
+        display: block;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: bold;
+        letter-spacing: .015em;
+        color: @color-black;
+
+        @media @mobile-xs {
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    p { margin: 0; }
+
+    &.slick-initialized {
+      .slick-dots {
+        height: 22px;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        list-style: none;
+        text-align: center;
+        @media @tablet-sm {
+          bottom: -10px;
+        }
+
+        li {
+          margin: 0 4px;
+          display: inline-block;
+          &.slick-active .dot:before { background-color: @color-blue; }
+        }
+
+        .dot {
+          width: 22px;
+          height: 22px;
+          display: block;
+          cursor: pointer;
+          position: relative;
+
+          &:before {
+            .pseudo;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: @color-gray-light;
+            transition: background-color @duration;
+            backface-visibility: hidden;
+          }
+        }
+
+      }
+    }
+  }
+
+  /*
+  @media @tablet-md {
+    padding: 26px 30px 44px;
+    .list {
+      margin-left: -30px;
+      margin-right: -30px;
+      .comment {
+        width: 50%;
+        float: left;
+        padding-right: 30px;
+        padding-left: 128px;
+        .photo {
+          left: 30px;
+        }
+      }
+    }
+  }
+  */
+}

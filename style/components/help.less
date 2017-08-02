@@ -1,0 +1,41 @@
+/* ==========================================================================
+   HELP
+   ========================================================================== */
+.help {
+  position: relative;
+  background-image: url('@{images}/help.jpg');
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: auto 250px;
+
+  @media @tablet-sm {
+    padding-bottom: 100px;
+    order: 80;
+  }
+
+  @media @desktop {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .heading { margin: 0 0 10px; }
+
+  p { max-width: 400px; margin: 0; }
+
+  .button {
+    width: 226px;
+    height: auto;
+    margin-top: 83px;
+    display: block;
+    @media @mobile-md {
+      margin-right: auto;
+      margin-left: auto;
+    }
+    @media @tablet-sm {
+      margin-top: 0;
+      position: absolute;
+      left: 30px;
+      bottom: 45px;
+    }
+  }
+}

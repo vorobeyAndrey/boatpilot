@@ -1,0 +1,33 @@
+/* ==========================================================================
+   FACEBOOK WIDGET
+   ========================================================================== */
+.fb-widget {
+  min-height: 465px;
+  padding: 0;
+  margin-right: -25px;
+  margin-left: -25px;
+  overflow: hidden;
+  background: none;
+
+  @media @mobile-xs {
+    margin-right: 0;
+    margin-left: 0;
+    overflow: visible;
+  }
+  @media @tablet-sm {
+    padding: 237px 0 0;
+    order: 60;
+  }
+  @media @desktop {
+    padding: 0;
+    order: 40;
+  }
+
+  .fb-page {
+    width: 340px;
+    height: 465px;
+    margin: 0 auto;
+    display: block;
+    background: @color-white;
+  }
+}
