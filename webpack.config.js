@@ -1,7 +1,9 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
+const rimraf = require('rimraf')
 
+rimraf('dist/', function () {})
 module.exports = {
     entry: path.resolve('src', 'index.tsx'),
     output: {
@@ -46,21 +48,19 @@ module.exports = {
                 use: [
                     {
                         loader: 'file-loader',
-                        options: { query: { hash: 'sha512', digest: 'hex', name: '[hash].[ext]' } }
+                        options: { hash: 'sha512', digest: 'hex', name: '[path][hash].[ext]' }
                     },
                     {
                         loader: 'image-webpack-loader',
                         options: {
-                            query: {
-                                mozjpeg: {
-                                    progressive: true
-                                },
-                                gifsicle: {
-                                    interlaced: true
-                                },
-                                optipng: {
-                                    optimizationLevel: 7
-                                }
+                            mozjpeg: {
+                                progressive: true
+                            },
+                            gifsicle: {
+                                interlaced: true
+                            },
+                            optipng: {
+                                optimizationLevel: 7
                             }
                         }
                     }
