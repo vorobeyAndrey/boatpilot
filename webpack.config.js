@@ -16,7 +16,10 @@ module.exports = {
         hot: true
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.json']
+        extensions: ['.ts', '.tsx', '.js', '.json'],
+        alias: {
+            'img': path.resolve(__dirname, 'img')
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({ template: 'index.html' }),
